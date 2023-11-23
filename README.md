@@ -6,3 +6,47 @@
 虽然现在玩群晖有的是比aria2 好用的东西 ，比如我现在用的是qBittorrent 。 
 aria2 感觉就不太适合下BT， 下点对点的直连还是可以的。
 我看看摸鱼的时候有没有空再优化下代码，做成api的方式发出请求,就不用再进页面了。
+
+****
+### Updated: 2023-11-23
+
+#### 直接访问Aria2格式的Tracker列表API</h4>
+
+_**https://tk.songw.top/aria2_best**_ 
+
+_**https://tk.songw.top/aria2_all**_ 
+
+_**https://tk.songw.top/aria2_all_udp**_ 
+
+_**https://tk.songw.top/aria2_all_http**_ 
+
+_**https://tk.songw.top/aria2_all_https**_ 
+
+_**https://tk.songw.top/aria2_all_ws**_ 
+
+_**https://tk.songw.top/aria2_best_ip**_ 
+
+_**https://tk.songw.top/aria2_all_ip**_ 
+
+_**[TrackersListCollection/http_aria2.txt](https://gitea.com/XIU2/TrackersListCollection/raw/branch/master/http_aria2.txt)**_
+
+_**[TrackersListCollection/all_aria2.txt](https://gitea.com/XIU2/TrackersListCollection/raw/branch/master/all_aria2.txt)**_
+
+_**[TrackersListCollection/best_aria2.txt](https://gitea.com/XIU2/TrackersListCollection/raw/branch/master/best_aria2.txt)**_
+
+
+****
+### Tracker Source
+
+This project brings together the following list of public trackers:
+* [https://github.com/ngosang/trackerslist](https://github.com/ngosang/trackerslist)
+* [https://newtrackon.com/list](https://newtrackon.com/list)
+* [http://github.itzmx.com/1265578519/OpenTracker/master/tracker.txt](http://github.itzmx.com/1265578519/OpenTracker/master/tracker.txt)
+* [https://tinytorrent.net/best-torrent-tracker-list-updated/](https://tinytorrent.net/best-torrent-tracker-list-updated/)
+* [http://www.torrenttrackerlist.com/torrent-tracker-list](http://www.torrenttrackerlist.com/torrent-tracker-list)
+* [https://github.com/DeSireFire/animeTrackerList](https://github.com/DeSireFire/animeTrackerList)
+* [https://github.com/XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection)
+
+Thanks for these projects!
+
+****
