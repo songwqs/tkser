@@ -7,14 +7,14 @@ async function handleRequest(request) {
 //使用方法：没有参数时 http://url.com >默认> http://url.com/best
   // 定义后缀与相应文件的映射
   const suffixToTrackerMap = {
-    'best': 'trackers_best.txt',
-    'all': 'trackers_all.txt',
-    'all_udp': 'trackers_all_udp.txt',
-    'all_htt': 'trackers_all_http.txt',
-    'all_https': 'trackers_all_https.txt',
-    'all_ws': 'trackers_all_ws.txt',
-    'best_ip': 'trackers_best_ip.txt',
-    'all_ip': 'trackers_all_ip.txt',
+    'aria2_best': 'trackers_best.txt',
+    'aria2_all': 'trackers_all.txt',
+    'aria2_all_udp': 'trackers_all_udp.txt',
+    'aria2_all_htt': 'trackers_all_http.txt',
+    'aria2_all_https': 'trackers_all_https.txt',
+    'aria2_all_ws': 'trackers_all_ws.txt',
+    'aria2_best_ip': 'trackers_best_ip.txt',
+    'aria2_all_ip': 'trackers_all_ip.txt',
     // 添加其他后缀与文件的映射
   };
 
