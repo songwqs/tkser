@@ -27,7 +27,7 @@ jobs:
         run: |
           echo "Github Event Inputs: ${{ toJson(github.event.inputs) }}"
           echo "Suffix is ${{ github.event.inputs.suffix || 'best' }}"
-          echo "Environment Variables: ${{ toJson(process.env) }}"
+          printenv
           
       - name: List Files
         run: ls -al
