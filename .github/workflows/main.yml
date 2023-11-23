@@ -23,23 +23,21 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Debug Inputs
+      - name: Generate Trackers
         run: |
-          echo "Github Event Inputs: ${{ toJson(github.event.inputs) }}"
-          echo "Suffix is ${{ github.event.inputs.suffix || 'best' }}"
-          printenv
+          node scripts/generate_trackers.js 'aria2_best'
+          node scripts/generate_trackers.js 'aria2_all'
+          node scripts/generate_trackers.js 'aria2_all_udp'
+          node scripts/generate_trackers.js 'aria2_all_http'
+          node scripts/generate_trackers.js 'aria2_all_https'
+          node scripts/generate_trackers.js 'aria2_all_ws'
+          node scripts/generate_trackers.js 'aria2_best_ip'
+          node scripts/generate_trackers.js 'aria2_all_ip'
 
-      - name: Execute Script
+      - name: Commit and Push
         run: |
-          echo "Running npm run generate-trackers with suffix: $INPUT_SUFFIX"
-          npm run generate-trackers
-        env:
-          INPUT_SUFFIX: 'aria2_best'
-
-      - name: Add and Commit Changes
-        run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
           git add .
-          git commit -m "Generate trackers $(date +'%Y-%m-%d')"
+          git commit -m "Generate trackers on $(date +'%Y-%m-%d %T')"
           git push
