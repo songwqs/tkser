@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "scripts": {
+    "generate-trackers": "node scripts/generate_trackers.js"
+  }
+}
