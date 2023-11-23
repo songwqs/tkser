@@ -8,7 +8,7 @@ on:
         required: false
 
 jobs:
-  generate-and-push-trackers:
+  generate-trackers:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,6 +23,12 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Debug Inputs
+        run: |
+          echo "Github Event Inputs: ${{ toJson(github.event.inputs) }}"
+          echo "Suffix is ${{ github.event.inputs.suffix || 'best' }}"
+          printenv
+
       - name: Execute Script
         run: |
           echo "Running npm run generate-trackers with suffix: $INPUT_SUFFIX"
@@ -30,10 +36,10 @@ jobs:
         env:
           INPUT_SUFFIX: 'aria2_best'
 
-      - name: Commit and Push Changes
+      - name: Add and Commit Changes
         run: |
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
           git add .
           git commit -m "Generate trackers $(date +'%Y-%m-%d')"
-          git push --force origin master
+          git push
