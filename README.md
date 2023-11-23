@@ -1,2 +1,8 @@
-# 原Aria2_BT服务器:  www.tkser.tk 
- aria2的BT服务器地址bt-tracker 快捷复制 
+# 原Aria2_BT服务器:  www.tkser.tk  现在的域名：https://tk.songw.top
+18年还是19年折腾下载机 用的aria2苦于下bt没速度就无意中做的一个：bt-tracker 快捷复制，
+用的免费域名tk，后面服务器到期直接把源码发论坛了让老哥们自己搭建了，然后一个老哥接手了，他提供的域：https://edam.top/tk/
+
+#后期计划
+虽然现在玩群晖有的是比aria2 好用的东西 ，比如我现在用的是qBittorrent 。 
+aria2 感觉就不太适合下BT， 下点对点的直连还是可以的。
+我看看摸鱼的时候有没有空再优化下代码，做成api的方式发出请求,就不用再进页面了。
