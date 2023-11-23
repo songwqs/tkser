@@ -8,7 +8,7 @@ on:
         required: false
 
 jobs:
-  generate-trackers:
+  generate-and-push-trackers:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,12 +23,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Debug Inputs
-        run: |
-          echo "Github Event Inputs: ${{ toJson(github.event.inputs) }}"
-          echo "Suffix is ${{ github.event.inputs.suffix || 'best' }}"
-          printenv
-
       - name: Execute Script
         run: |
           echo "Running npm run generate-trackers with suffix: $INPUT_SUFFIX"
@@ -41,5 +35,5 @@ jobs:
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
           git add .
-          git commit -m "$(date +'%Y-%m-%d') Generate trackers"
-          git push
+          git commit -m "Generate trackers $(date +'%Y-%m-%d')"
+          git push --force origin master
