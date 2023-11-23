@@ -11,11 +11,10 @@ async function generateTrackers() {
     'aria2_all_ws': 'trackers_all_ws.txt',
     'aria2_best_ip': 'trackers_best_ip.txt',
     'aria2_all_ip': 'trackers_all_ip.txt',
-    // 添加其他后缀与文件的映射
   };
 
-  const defaultSuffix = 'best';
-  const suffix = process.argv[2] || defaultSuffix;
+  // 从环境变量中获取命令行参数，如果没有则使用默认值
+  const suffix = process.env.SUFFIX || 'best';
   const trackerFile = suffixToTrackerMap[suffix];
 
   if (!trackerFile) {
