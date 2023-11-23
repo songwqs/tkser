@@ -4,7 +4,7 @@ addEventListener('fetch', event => {
 
 async function handleRequest(request) {
   const url = new URL(request.url);
-
+//使用方法：没有参数时 http://url.com >默认> http://url.com/best
   // 定义后缀与相应文件的映射
   const suffixToTrackerMap = {
     'best': 'trackers_best.txt',
