@@ -1,22 +1,20 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
 
-async function generateTrackers() {
+async function generateTrackers(suffix) {
   const suffixToTrackerMap = {
     'aria2_best': 'trackers_best.txt',
     'aria2_all': 'trackers_all.txt',
     'aria2_all_udp': 'trackers_all_udp.txt',
-    'aria2_all_htt': 'trackers_all_http.txt',
+    'aria2_all_http': 'trackers_all_http.txt',
     'aria2_all_https': 'trackers_all_https.txt',
     'aria2_all_ws': 'trackers_all_ws.txt',
     'aria2_best_ip': 'trackers_best_ip.txt',
     'aria2_all_ip': 'trackers_all_ip.txt',
-    // 添加其他后缀与文件的映射
   };
 
-  const defaultSuffix = 'best';
-  const suffix = process.env.INPUT_SUFFIX || defaultSuffix;
-  const trackerFile = suffixToTrackerMap[suffix];
+  const defaultSuffix = 'aria2_best';
+  const trackerFile = suffixToTrackerMap[suffix] || suffixToTrackerMap[defaultSuffix];
 
   if (!trackerFile) {
     console.error('Invalid or unsupported suffix:', suffix);
@@ -46,10 +44,18 @@ async function generateTrackers() {
   const aria2textFinal = aria2textOk.substring(0, aria2textOk.length - 1);
 
   // 写入文件
-  const outputFilePath = `./${trackerFile}`;
+  const outputFilePath = `./${suffix}.txt`;
   fs.writeFileSync(outputFilePath, aria2textFinal, 'utf-8');
 
   console.log(`Generated tracker file: ${outputFilePath}`);
 }
 
-generateTrackers();
+// 生成 8 个不同的 txt 文件
+generateTrackers('aria2_best');
+generateTrackers('aria2_all');
+generateTrackers('aria2_all_udp');
+generateTrackers('aria2_all_http');
+generateTrackers('aria2_all_https');
+generateTrackers('aria2_all_ws');
+generateTrackers('aria2_best_ip');
+generateTrackers('aria2_all_ip');
