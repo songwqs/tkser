@@ -15,7 +15,7 @@ async function generateTrackers() {
   };
 
   const defaultSuffix = 'best';
-  const suffix = process.argv[2] || defaultSuffix;
+  const suffix = process.env.INPUT_SUFFIX || defaultSuffix;
   const trackerFile = suffixToTrackerMap[suffix];
 
   if (!trackerFile) {
