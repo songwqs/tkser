@@ -1,4 +1,4 @@
-name: Generate Trackers
+name: Generate Trackers 2
 
 on:
   schedule:
