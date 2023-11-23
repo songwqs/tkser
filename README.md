@@ -12,21 +12,21 @@ aria2 感觉就不太适合下BT， 下点对点的直连还是可以的。
 
 #### 直接访问Aria2格式的Tracker列表API</h4>
 
-_**https://tk.songw.top/aria2_best**_ 
+_**https://jsd.cdn.zzko.cn/gh/songwqs/tkser/aria2_best.txt**_ 
 
-_**https://tk.songw.top/aria2_all**_ 
+_**https://jsd.cdn.zzko.cn/gh/songwqs/tkser/aria2_all.txt**_ 
 
-_**https://tk.songw.top/aria2_all_udp**_ 
+_**https://jsd.cdn.zzko.cn/gh/songwqs/tkser/aria2_all_udp.txt**_ 
 
-_**https://tk.songw.top/aria2_all_http**_ 
+_**https://jsd.cdn.zzko.cn/gh/songwqs/tkser/aria2_all_http.txt**_ 
 
-_**https://tk.songw.top/aria2_all_https**_ 
+_**https://jsd.cdn.zzko.cn/gh/songwqs/tkser/aria2_all_https.txt**_ 
 
-_**https://tk.songw.top/aria2_all_ws**_ 
+_**https://jsd.cdn.zzko.cn/gh/songwqs/tkser/aria2_all_ws.txt**_ 
 
-_**https://tk.songw.top/aria2_best_ip**_ 
+_**https://jsd.cdn.zzko.cn/gh/songwqs/tkser/aria2_best_ip.txt**_ 
 
-_**https://tk.songw.top/aria2_all_ip**_ 
+_**https://jsd.cdn.zzko.cn/gh/songwqs/tkser/aria2_all_ip.txt**_ 
 
 _**[TrackersListCollection/http_aria2.txt](https://gitea.com/XIU2/TrackersListCollection/raw/branch/master/http_aria2.txt)**_
 
