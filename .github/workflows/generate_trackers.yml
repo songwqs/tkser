@@ -2,7 +2,7 @@ name: Generate Trackers
 
 on:
   schedule:
-      - cron: '*/5 * * * *'
+      - cron: '*/10 * * * *'
 
 jobs:
   generate-trackers:
