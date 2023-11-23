@@ -23,8 +23,13 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Debug
-        run: echo "Suffix is ${{ github.event.inputs.suffix || 'best' }}"
+      - name: Debug Inputs
+        run: |
+          echo "Github Event Inputs: ${{ toJson(github.event.inputs) }}"
+          echo "Suffix is ${{ github.event.inputs.suffix || 'best' }}"
+          
+      - name: List Files
+        run: ls -al
 
       - name: Execute Script
         run: npm run generate-trackers
