@@ -117,7 +117,8 @@ function copyUrl2() {
     trackertext = document.getElementById("trackertext");
     var bucopy = document.getElementById("bucopy");
     trackercopy.value = trackertext.innerText;
-    console.log(trackercopy.value) trackercopy.select();
+    console.log(trackercopy.value);
+trackercopy.select();
     document.execCommand("Copy", "false", null);
     bucopy.value = '已复制好，可贴粘';
     setTimeout(function() {
