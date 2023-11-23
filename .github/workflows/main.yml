@@ -27,6 +27,7 @@ jobs:
         run: |
           echo "Github Event Inputs: ${{ toJson(github.event.inputs) }}"
           echo "Suffix is ${{ github.event.inputs.suffix || 'best' }}"
+          echo "Environment Variables: ${{ toJson(process.env) }}"
           
       - name: List Files
         run: ls -al
@@ -34,4 +35,4 @@ jobs:
       - name: Execute Script
         run: npm run generate-trackers
         env:
-          SUFFIX: ${{ github.event.inputs.suffix || 'best' }}
+          INPUT_SUFFIX: ${{ github.event.inputs.suffix || 'best' }}
