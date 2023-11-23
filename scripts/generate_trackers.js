@@ -15,7 +15,7 @@ async function generateTrackers() {
   };
 
   // 获取命令行参数，如果没有则使用默认值
-  const suffix = process.env.SUFFIX || 'best';
+  const suffix = process.env.INPUT_SUFFIX || 'best';
 
   // 确保 suffix 有效
   if (!suffixToTrackerMap.hasOwnProperty(suffix)) {
