@@ -11,16 +11,19 @@ async function generateTrackers() {
     'aria2_all_ws': 'trackers_all_ws.txt',
     'aria2_best_ip': 'trackers_best_ip.txt',
     'aria2_all_ip': 'trackers_all_ip.txt',
+    // 添加其他后缀与文件的映射
   };
 
-  // 从环境变量中获取命令行参数，如果没有则使用默认值
+  // 获取命令行参数，如果没有则使用默认值
   const suffix = process.env.SUFFIX || 'best';
-  const trackerFile = suffixToTrackerMap[suffix];
 
-  if (!trackerFile) {
+  // 确保 suffix 有效
+  if (!suffixToTrackerMap.hasOwnProperty(suffix)) {
     console.error('Invalid or unsupported suffix:', suffix);
     process.exit(1);
   }
+
+  const trackerFile = suffixToTrackerMap[suffix];
 
   const trackerUrl = `https://raw.githubusercontent.com/ngosang/trackerslist/master/${trackerFile}`;
   const response = await fetch(trackerUrl);
