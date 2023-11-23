@@ -38,5 +38,5 @@ jobs:
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
           git add .
-          git commit -m "Generate trackers"
+          git commit -m "$(date +'%Y-%m-%d') Generate trackers"
           git push
