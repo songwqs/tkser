@@ -1,8 +1,7 @@
 name: Generate Trackers 2
 
 on:
-  schedule:
-      - cron: '*/10 * * * *'
+   workflow_dispatch:
 
 jobs:
   generate-trackers:
