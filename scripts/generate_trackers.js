@@ -14,16 +14,14 @@ async function generateTrackers() {
     // 添加其他后缀与文件的映射
   };
 
-  // 获取命令行参数，如果没有则使用默认值
-  const suffix = process.env.INPUT_SUFFIX || 'best';
+  const defaultSuffix = 'best';
+  const suffix = process.argv[2] || defaultSuffix;
+  const trackerFile = suffixToTrackerMap[suffix];
 
-  // 确保 suffix 有效
-  if (!suffixToTrackerMap.hasOwnProperty(suffix)) {
+  if (!trackerFile) {
     console.error('Invalid or unsupported suffix:', suffix);
     process.exit(1);
   }
-
-  const trackerFile = suffixToTrackerMap[suffix];
 
   const trackerUrl = `https://raw.githubusercontent.com/ngosang/trackerslist/master/${trackerFile}`;
   const response = await fetch(trackerUrl);
