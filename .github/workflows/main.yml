@@ -1,7 +1,11 @@
-name: Generate Trackers 2
+name: Generate Trackers
 
 on:
-   workflow_dispatch:
+  workflow_dispatch:
+    inputs:
+      suffix:
+        description: 'Suffix for the trackers'
+        required: false
 
 jobs:
   generate-trackers:
@@ -21,3 +25,5 @@ jobs:
 
       - name: Execute Script
         run: npm run generate-trackers
+        env:
+          SUFFIX: ${{ github.event.inputs.suffix || 'best' }}
