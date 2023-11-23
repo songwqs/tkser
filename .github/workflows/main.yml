@@ -28,14 +28,10 @@ jobs:
           echo "Github Event Inputs: ${{ toJson(github.event.inputs) }}"
           echo "Suffix is ${{ github.event.inputs.suffix || 'best' }}"
           printenv
-          
-      - name: List Files
-        run: ls -al
-
-      - name: Show Debug Log
-        run: cat /home/runner/.npm/_logs/2023-11-23T17_02_31_444Z-debug.log
 
       - name: Execute Script
-        run: npm run generate-trackers
+        run: |
+          npm run generate-trackers > generated_log.txt 2>&1
+          cat generated_log.txt
         env:
           INPUT_SUFFIX: ${{ github.event.inputs.suffix || 'best' }}
