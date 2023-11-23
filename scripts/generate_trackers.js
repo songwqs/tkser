@@ -16,36 +16,38 @@ async function generateTrackers() {
 
   const defaultSuffix = 'best';
   const suffix = process.argv[2] || defaultSuffix;
-  const trackerFiles = Object.values(suffixToTrackerMap);
 
-  for (const trackerFile of trackerFiles) {
-    const trackerUrl = `https://raw.githubusercontent.com/ngosang/trackerslist/master/${trackerFile}`;
-    const response = await fetch(trackerUrl);
+  for (const [suffixKey, trackerFile] of Object.entries(suffixToTrackerMap)) {
+    if (suffix === suffixKey) {
+      const trackerUrl = `https://raw.githubusercontent.com/ngosang/trackerslist/master/${trackerFile}`;
+      const response = await fetch(trackerUrl);
 
-    if (!response.ok) {
-      console.error(`Failed to fetch tracker file: ${trackerFile}`);
-      process.exit(1);
+      if (!response.ok) {
+        console.error(`Failed to fetch tracker file: ${trackerFile}`);
+        process.exit(1);
+      }
+
+      const aria2text = await response.text();
+      const ch = "announce";
+      const reg = new RegExp(ch, "g");
+      const ckok = "announce,";
+
+      // 移除所有空白字符
+      const aria2textNoSpaces = aria2text.replace(/\s/g, "");
+
+      // 使用正则表达式替换 "announce" 并加上逗号
+      const aria2textOk = aria2textNoSpaces.replace(reg, ckok);
+
+      // 移除字符串末尾的逗号
+      const aria2textFinal = aria2textOk.substring(0, aria2textOk.length - 1);
+
+      // 写入文件到仓库的工作目录
+      const outputFilePath = `./${trackerFile}`;
+      fs.writeFileSync(outputFilePath, aria2textFinal, 'utf-8');
+
+      console.log(`Generated tracker file: ${outputFilePath}`);
+      break;
     }
-
-    const aria2text = await response.text();
-    const ch = "announce";
-    const reg = new RegExp(ch, "g");
-    const ckok = "announce,";
-
-    // 移除所有空白字符
-    const aria2textNoSpaces = aria2text.replace(/\s/g, "");
-
-    // 使用正则表达式替换 "announce" 并加上逗号
-    const aria2textOk = aria2textNoSpaces.replace(reg, ckok);
-
-    // 移除字符串末尾的逗号
-    const aria2textFinal = aria2textOk.substring(0, aria2textOk.length - 1);
-
-    // 写入文件到仓库的工作目录
-    const outputFilePath = `./${trackerFile}`;
-    fs.writeFileSync(outputFilePath, aria2textFinal, 'utf-8');
-
-    console.log(`Generated tracker file: ${outputFilePath}`);
   }
 }
 
