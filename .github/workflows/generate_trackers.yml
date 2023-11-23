@@ -2,7 +2,7 @@ name: Generate Trackers
 
 on:
   schedule:
-      - cron: '*/10 * * * *'
+    - cron: '0 1 * * *' # 每天1点执行
 
 jobs:
   generate-trackers:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Run Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 14
@@ -20,5 +20,23 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Debug Inputs
+        run: |
+          echo "Github Event Inputs: ${{ toJson(github.event.inputs) }}"
+          echo "Suffix is ${{ github.event.inputs.suffix || 'best' }}"
+          printenv
+
       - name: Execute Script
-        run: npm run generate-trackers
+        run: |
+          echo "Running npm run generate-trackers with suffix: $INPUT_SUFFIX"
+          npm run generate-trackers
+        env:
+          INPUT_SUFFIX: 'aria2_best'
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git add .
+          git commit -m "Generate trackers"
+          git push
