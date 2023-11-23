@@ -30,8 +30,6 @@ jobs:
           printenv
 
       - name: Execute Script
-        run: |
-          npm run generate-trackers > generated_log.txt 2>&1
-          cat generated_log.txt
+        run: npm run generate-trackers
         env:
           INPUT_SUFFIX: ${{ github.event.inputs.suffix || 'best' }}
