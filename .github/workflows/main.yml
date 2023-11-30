@@ -1,4 +1,4 @@
-name: Generate Trackers
+name: 手动Trackers
 
 on:
   workflow_dispatch:
