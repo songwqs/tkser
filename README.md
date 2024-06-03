@@ -1,4 +1,4 @@
-# 原Aria2_BT服务器:  www.tkser.tk    现在：https://tk.songw.top
+# 原Aria2_BT服务器:  www.tkser.tk    现在：[https://tk.songwqs.top](https://tk.songwqs.top/)
 18年还是19年折腾下载机 用的aria2苦于下bt没速度就无意中做的一个：bt-tracker 快捷复制，
 用的免费域名tk，后面服务器到期直接把源码发论坛了让老哥们自己搭建了，然后一个老哥接手了，他提供的域：https://edam.top/tk/
 
