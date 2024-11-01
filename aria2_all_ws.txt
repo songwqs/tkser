@@ -1,1 +1,1 @@
-wss://tracker.btorrent.xyzwss://tracker.webtorrent.devws://tracker.files.fm:7072/announce
+wss://tracker.webtorrent.de
