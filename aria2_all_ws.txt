@@ -1,1 +1,1 @@
-wss://tracker.webtorrent.dev:443wss://tracker.files.fm:7073/announce,wss://tracker.btorrent.xyz:443ws://tracker.files.fm:7072/announce
+wss://tracker.btorrent.xyz:443wss://tracker.webtorrent.dev:44
