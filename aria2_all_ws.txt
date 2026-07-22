@@ -1,1 +1,1 @@
-wss://tracker.btorrent.xyz:44
+wss://tracker.webtorrent.dev:443wss://tracker.openwebtorrent.com:443wss://open.ftorrent.com:443wss://tracker.btorrent.xyz:44
